@@ -23,5 +23,13 @@ class _GetLocationPageState extends State<GetLocationPage> {
     return Scaffold(
     );
   }
-
+ Future<Map<String, double>> _getLocation() async {
+    var currentLocation = <String, double>{};
+    try {
+      currentLocation = await location.getLocation();
+    } catch (e) {
+      currentLocation = null;
+    }
+    return currentLocation;
+  }
 }
