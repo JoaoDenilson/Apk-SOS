@@ -20,23 +20,23 @@ class _GetLocationPageState extends State<GetLocationPage> {
       'cidade': 'Varze Alegre',
       'location': [-6.7945416, -39.2923196],
       'tel': '(88) 3541-1308'
-    }
+    },
     {
       'cidade': 'Cedro',
       'location': [-6.6055679, -39.0587997],
       'tel': '(88) 3564-0194' 
-    }
+    },
     {
       'cidade': 'Iguatu',
       'location': [-6.3737751, -39.3072796],
       'tel': '(88) 3581-0307'
-    }
+    },
     {
       'cidade': 'Icó',
       'location': [-6.4081073, -38.8578701],
       'tel': '(88) 3541-1308'
       
-    }
+    },
     {
       'cidade': 'Lavras da Mangabeira',
       'location': [-6.7465579, -38.9649305],
