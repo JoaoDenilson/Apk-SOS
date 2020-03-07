@@ -1,20 +1,24 @@
 import 'package:flutter/material.dart';
-import 'package:location/location.dart';
+import 'package:geolocator/geolocator.dart';
+import 'dart:async';
 
 void main(){
   runApp(MaterialApp(
-    home: GetLocationPage()
+    home: GeoListenPage()
   ));
 }
 
-class GetLocationPage extends StatefulWidget {
+class GeoListenPage extends StatefulWidget {
   @override
-  _GetLocationPageState createState() => _GetLocationPageState();
+  _GeoListenPageState createState() => _GeoListenPageState();
 }
 
-class _GetLocationPageState extends State<GetLocationPage> {
+class _GeoListenPageState extends State<GeoListenPage> {
 
-  var location = new Location();
+  Geolocator geolocator = Geolocator();
+
+  Position userLocation;
+    
   var citys = [
     {
       'cidade': 'Varze Alegre',
@@ -45,34 +49,92 @@ class _GetLocationPageState extends State<GetLocationPage> {
     }
   ];
 
-  Map<String, double> userLocation;
+  //Calcular 
+  void _calcular() async {
+    final double startLatitude = userLocation.latitude; 
+    final double startLongitude = userLocation.longitude;
+
+    double compLatitude = 0.0; 
+    double compLongitude = 0.0; 
+
+    double distance = 0.0;
+    var contact = '';
+    var cidade = '';
+    double distance_k = 10000.0;
+    var coord =[];
+
+    //Encontrar a menor distancia
+    for ( var city in citys){
+      coord = (city['location']);
+ 
+      compLatitude = coord[0];
+      compLongitude = coord[1];
+
+      distance = await Geolocator().distanceBetween(
+        startLatitude, startLongitude, compLatitude, compLongitude);
+      //print('Distancia: $distance');
+      //print(city['cidade']);
+
+      if( distance < distance_k ){
+        distance_k = distance;
+        contact = (city['tel']);
+        cidade = (city['cidade']);
+      }
+    }
+    //print('Menor Distancia: $distance_k');
+    //print('Cidade: $cidade');
+    //print('Numero: $contact');
+  }
+ 
+  void ligacao(){
+
+  }
+  
+  @override
+  void initState() {
+    super.initState();
+    _getLocation().then((position) {
+      userLocation = position;
+    });
+
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-       appBar: AppBar(),
+       appBar: AppBar(
+         title: Text("SOS CIDADÃO "),
+        centerTitle: true,
+        backgroundColor: Colors.blue,
+       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            userLocation == null
-                ? CircularProgressIndicator()
-                : Text("Location:" +
-                    userLocation["latitude"].toString() +
-                    " " +
-                    userLocation["longitude"].toString()),
+          children: <Widget>[   
+            Icon(
+                Icons.location_city,
+                color: Colors.black,
+                size: 120.0,
+              ),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(10.0),
               child: RaisedButton(
+                 shape: new RoundedRectangleBorder(
+                  borderRadius: new BorderRadius.circular(120.0),
+                  side: BorderSide(color: Colors.red)),
                 onPressed: () {
                   _getLocation().then((value) {
                     setState(() {
                       userLocation = value;
                     });
                   });
+                  _calcular();
                 },
-                color: Colors.blue,
-                child: Text("Get Location", style: TextStyle(color: Colors.white),),
+                color: Colors.red,
+                child: Text(
+                  "SOS",
+                  style: TextStyle(color: Colors.white,fontSize: 140.0,),
+                ),
               ),
             ),
           ],
@@ -80,13 +142,15 @@ class _GetLocationPageState extends State<GetLocationPage> {
       ),
     );
   }
- Future<Map<String, double>> _getLocation() async {
-    var currentLocation = <String, double>{};
+
+  Future<Position> _getLocation() async {
+    var currentLocation;
     try {
-      currentLocation = await location.getLocation();
+      currentLocation = await geolocator.getCurrentPosition();
     } catch (e) {
       currentLocation = null;
     }
+    
     return currentLocation;
   }
 }
