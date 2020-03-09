@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:url_launcher/url_launcher.dart' as UrlLauncher;
-import 'package:intent/intent.dart' as android_intent;
-import 'package:intent/action.dart' as android_action;
+//import 'package:intent/intent.dart' as android_intent;
+//import 'package:intent/action.dart' as android_action;
 import 'dart:async';
 
 void main(){
