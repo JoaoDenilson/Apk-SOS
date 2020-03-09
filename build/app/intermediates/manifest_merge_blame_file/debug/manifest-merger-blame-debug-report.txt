@@ -27,69 +27,99 @@
 23    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 23-->C:\apk_sos\android\app\src\main\AndroidManifest.xml:9:5-79
 23-->C:\apk_sos\android\app\src\main\AndroidManifest.xml:9:22-76
-24
-25    <application
-25-->C:\apk_sos\android\app\src\main\AndroidManifest.xml:10:5-32:19
-26        android:name="io.flutter.app.FlutterApplication"
-26-->C:\apk_sos\android\app\src\main\AndroidManifest.xml:11:9-57
-27        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-27-->[androidx.core:core:1.1.0] C:\Users\João Denílson\.gradle\caches\transforms-2\files-2.1\a528b13ac93e64cafa3d0480e2c93207\core-1.1.0\AndroidManifest.xml:24:18-86
-28        android:debuggable="true"
-29        android:icon="@mipmap/ic_launcher"
-29-->C:\apk_sos\android\app\src\main\AndroidManifest.xml:13:9-43
-30        android:label="apk_sos" >
-30-->C:\apk_sos\android\app\src\main\AndroidManifest.xml:12:9-32
-31        <activity
-31-->C:\apk_sos\android\app\src\main\AndroidManifest.xml:14:9-25:20
-32            android:name="com.example.apk_sos.MainActivity"
-32-->C:\apk_sos\android\app\src\main\AndroidManifest.xml:15:13-41
-33            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
-33-->C:\apk_sos\android\app\src\main\AndroidManifest.xml:18:13-163
-34            android:hardwareAccelerated="true"
-34-->C:\apk_sos\android\app\src\main\AndroidManifest.xml:19:13-47
-35            android:launchMode="singleTop"
-35-->C:\apk_sos\android\app\src\main\AndroidManifest.xml:16:13-43
-36            android:theme="@style/LaunchTheme"
-36-->C:\apk_sos\android\app\src\main\AndroidManifest.xml:17:13-47
-37            android:windowSoftInputMode="adjustResize" >
-37-->C:\apk_sos\android\app\src\main\AndroidManifest.xml:20:13-55
-38            <intent-filter>
-38-->C:\apk_sos\android\app\src\main\AndroidManifest.xml:21:13-24:29
-39                <action android:name="android.intent.action.MAIN" />
-39-->C:\apk_sos\android\app\src\main\AndroidManifest.xml:22:17-68
-39-->C:\apk_sos\android\app\src\main\AndroidManifest.xml:22:25-66
-40
-41                <category android:name="android.intent.category.LAUNCHER" />
-41-->C:\apk_sos\android\app\src\main\AndroidManifest.xml:23:17-76
-41-->C:\apk_sos\android\app\src\main\AndroidManifest.xml:23:27-74
-42            </intent-filter>
-43        </activity>
-44        <!--
-45             Don't delete the meta-data below.
-46             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
-47        -->
-48        <meta-data
-48-->C:\apk_sos\android\app\src\main\AndroidManifest.xml:28:9-30:33
-49            android:name="flutterEmbedding"
-49-->C:\apk_sos\android\app\src\main\AndroidManifest.xml:29:13-44
-50            android:value="2" />
-50-->C:\apk_sos\android\app\src\main\AndroidManifest.xml:30:13-30
-51
-52        <activity
-52-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\João Denílson\.gradle\caches\transforms-2\files-2.1\5ac9ad6f13ea0190a3570ea7a43d9f59\play-services-base-17.0.0\AndroidManifest.xml:23:9-26:75
-53            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-53-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\João Denílson\.gradle\caches\transforms-2\files-2.1\5ac9ad6f13ea0190a3570ea7a43d9f59\play-services-base-17.0.0\AndroidManifest.xml:24:13-79
-54            android:exported="false"
-54-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\João Denílson\.gradle\caches\transforms-2\files-2.1\5ac9ad6f13ea0190a3570ea7a43d9f59\play-services-base-17.0.0\AndroidManifest.xml:25:13-37
-55            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-55-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\João Denílson\.gradle\caches\transforms-2\files-2.1\5ac9ad6f13ea0190a3570ea7a43d9f59\play-services-base-17.0.0\AndroidManifest.xml:26:13-72
-56
-57        <meta-data
-57-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\João Denílson\.gradle\caches\transforms-2\files-2.1\58b7711d9e47b631bf8cec9c35ed12b2\jetified-play-services-basement-17.0.0\AndroidManifest.xml:23:9-25:69
-58            android:name="com.google.android.gms.version"
-58-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\João Denílson\.gradle\caches\transforms-2\files-2.1\58b7711d9e47b631bf8cec9c35ed12b2\jetified-play-services-basement-17.0.0\AndroidManifest.xml:24:13-58
-59            android:value="@integer/google_play_services_version" />
-59-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\João Denílson\.gradle\caches\transforms-2\files-2.1\58b7711d9e47b631bf8cec9c35ed12b2\jetified-play-services-basement-17.0.0\AndroidManifest.xml:25:13-66
-60    </application>
-61
-62</manifest>
+24    <uses-permission android:name="android.permission.ACCESS_CALL_PRIVILEGED" />
+24-->C:\apk_sos\android\app\src\main\AndroidManifest.xml:10:5-81
+24-->C:\apk_sos\android\app\src\main\AndroidManifest.xml:10:22-78
+25
+26    <application
+26-->C:\apk_sos\android\app\src\main\AndroidManifest.xml:11:5-33:19
+27        android:name="io.flutter.app.FlutterApplication"
+27-->C:\apk_sos\android\app\src\main\AndroidManifest.xml:12:9-57
+28        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+28-->[androidx.core:core:1.2.0-alpha02] C:\Users\João Denílson\.gradle\caches\transforms-2\files-2.1\36bfdb9094f72237dde5031237f54642\core-1.2.0-alpha02\AndroidManifest.xml:24:18-86
+29        android:debuggable="true"
+30        android:icon="@mipmap/ic_launcher"
+30-->C:\apk_sos\android\app\src\main\AndroidManifest.xml:14:9-43
+31        android:label="apk_sos" >
+31-->C:\apk_sos\android\app\src\main\AndroidManifest.xml:13:9-32
+32        <activity
+32-->C:\apk_sos\android\app\src\main\AndroidManifest.xml:15:9-26:20
+33            android:name="com.example.apk_sos.MainActivity"
+33-->C:\apk_sos\android\app\src\main\AndroidManifest.xml:16:13-41
+34            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+34-->C:\apk_sos\android\app\src\main\AndroidManifest.xml:19:13-163
+35            android:hardwareAccelerated="true"
+35-->C:\apk_sos\android\app\src\main\AndroidManifest.xml:20:13-47
+36            android:launchMode="singleTop"
+36-->C:\apk_sos\android\app\src\main\AndroidManifest.xml:17:13-43
+37            android:theme="@style/LaunchTheme"
+37-->C:\apk_sos\android\app\src\main\AndroidManifest.xml:18:13-47
+38            android:windowSoftInputMode="adjustResize" >
+38-->C:\apk_sos\android\app\src\main\AndroidManifest.xml:21:13-55
+39            <intent-filter>
+39-->C:\apk_sos\android\app\src\main\AndroidManifest.xml:22:13-25:29
+40                <action android:name="android.intent.action.MAIN" />
+40-->C:\apk_sos\android\app\src\main\AndroidManifest.xml:23:17-68
+40-->C:\apk_sos\android\app\src\main\AndroidManifest.xml:23:25-66
+41
+42                <category android:name="android.intent.category.LAUNCHER" />
+42-->C:\apk_sos\android\app\src\main\AndroidManifest.xml:24:17-76
+42-->C:\apk_sos\android\app\src\main\AndroidManifest.xml:24:27-74
+43            </intent-filter>
+44        </activity>
+45        <!--
+46             Don't delete the meta-data below.
+47             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
+48        -->
+49        <meta-data
+49-->C:\apk_sos\android\app\src\main\AndroidManifest.xml:29:9-31:33
+50            android:name="flutterEmbedding"
+50-->C:\apk_sos\android\app\src\main\AndroidManifest.xml:30:13-44
+51            android:value="2" />
+51-->C:\apk_sos\android\app\src\main\AndroidManifest.xml:31:13-30
+52
+53        <activity
+53-->[:url_launcher] C:\apk_sos\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-11:74
+54            android:name="io.flutter.plugins.urllauncher.WebViewActivity"
+54-->[:url_launcher] C:\apk_sos\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-74
+55            android:exported="false"
+55-->[:url_launcher] C:\apk_sos\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:10:13-37
+56            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+56-->[:url_launcher] C:\apk_sos\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:11:13-71
+57
+58        <provider
+58-->[:intent] C:\apk_sos\build\intent\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-16:20
+59            android:name="io.github.itzmeanjan.intent.MyProvider"
+59-->[:intent] C:\apk_sos\build\intent\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-66
+60            android:authorities="io.github.itzmeanjan.intent.fileProvider"
+60-->[:intent] C:\apk_sos\build\intent\intermediates\library_manifest\debug\AndroidManifest.xml:10:13-75
+61            android:exported="false"
+61-->[:intent] C:\apk_sos\build\intent\intermediates\library_manifest\debug\AndroidManifest.xml:11:13-37
+62            android:grantUriPermissions="true" >
+62-->[:intent] C:\apk_sos\build\intent\intermediates\library_manifest\debug\AndroidManifest.xml:12:13-47
+63            <meta-data
+63-->[:intent] C:\apk_sos\build\intent\intermediates\library_manifest\debug\AndroidManifest.xml:13:13-15:54
+64                android:name="android.support.FILE_PROVIDER_PATHS"
+64-->[:intent] C:\apk_sos\build\intent\intermediates\library_manifest\debug\AndroidManifest.xml:14:17-67
+65                android:resource="@xml/file_paths" />
+65-->[:intent] C:\apk_sos\build\intent\intermediates\library_manifest\debug\AndroidManifest.xml:15:17-51
+66        </provider>
+67
+68        <activity
+68-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\João Denílson\.gradle\caches\transforms-2\files-2.1\5ac9ad6f13ea0190a3570ea7a43d9f59\play-services-base-17.0.0\AndroidManifest.xml:23:9-26:75
+69            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+69-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\João Denílson\.gradle\caches\transforms-2\files-2.1\5ac9ad6f13ea0190a3570ea7a43d9f59\play-services-base-17.0.0\AndroidManifest.xml:24:13-79
+70            android:exported="false"
+70-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\João Denílson\.gradle\caches\transforms-2\files-2.1\5ac9ad6f13ea0190a3570ea7a43d9f59\play-services-base-17.0.0\AndroidManifest.xml:25:13-37
+71            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+71-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\João Denílson\.gradle\caches\transforms-2\files-2.1\5ac9ad6f13ea0190a3570ea7a43d9f59\play-services-base-17.0.0\AndroidManifest.xml:26:13-72
+72
+73        <meta-data
+73-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\João Denílson\.gradle\caches\transforms-2\files-2.1\58b7711d9e47b631bf8cec9c35ed12b2\jetified-play-services-basement-17.0.0\AndroidManifest.xml:23:9-25:69
+74            android:name="com.google.android.gms.version"
+74-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\João Denílson\.gradle\caches\transforms-2\files-2.1\58b7711d9e47b631bf8cec9c35ed12b2\jetified-play-services-basement-17.0.0\AndroidManifest.xml:24:13-58
+75            android:value="@integer/google_play_services_version" />
+75-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\João Denílson\.gradle\caches\transforms-2\files-2.1\58b7711d9e47b631bf8cec9c35ed12b2\jetified-play-services-basement-17.0.0\AndroidManifest.xml:25:13-66
+76    </application>
+77
+78</manifest>

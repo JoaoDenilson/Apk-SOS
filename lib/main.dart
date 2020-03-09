@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
+import 'package:url_launcher/url_launcher.dart' as UrlLauncher;
+import 'package:intent/intent.dart' as android_intent;
+import 'package:intent/action.dart' as android_action;
 import 'dart:async';
 
 void main(){
@@ -18,33 +21,34 @@ class _GeoListenPageState extends State<GeoListenPage> {
   Geolocator geolocator = Geolocator();
 
   Position userLocation;
-    
+  
+  var tel = '';
   var citys = [
     {
       'cidade': 'Varze Alegre',
       'location': [-6.7945416, -39.2923196],
-      'tel': '(88) 3541-1308'
+      'tel': '88 3541-1308'
     },
     {
       'cidade': 'Cedro',
       'location': [-6.6055679, -39.0587997],
-      'tel': '(88) 3564-0194' 
+      'tel': '88 3564-0194' 
     },
     {
       'cidade': 'Iguatu',
       'location': [-6.3737751, -39.3072796],
-      'tel': '(88) 3581-0307'
+      'tel': '88 3581-0307'
     },
     {
       'cidade': 'Icó',
       'location': [-6.4081073, -38.8578701],
-      'tel': '(88) 3541-1308'
+      'tel': '88 3541-1308'
       
     },
     {
       'cidade': 'Lavras da Mangabeira',
       'location': [-6.7465579, -38.9649305],
-      'tel': '(88) 3541-1308'
+      'tel': '88 3541-1308'
       
     }
   ];
@@ -60,7 +64,7 @@ class _GeoListenPageState extends State<GeoListenPage> {
     double distance = 0.0;
     var contact = '';
     var cidade = '';
-    double distance_k = 10000.0;
+    double distance_k = 99999.0;
     var coord =[];
 
     //Encontrar a menor distancia
@@ -72,8 +76,9 @@ class _GeoListenPageState extends State<GeoListenPage> {
 
       distance = await Geolocator().distanceBetween(
         startLatitude, startLongitude, compLatitude, compLongitude);
-      //print('Distancia: $distance');
-      //print(city['cidade']);
+
+      print('Distancia: $distance');
+      print(city['cidade']);
 
       if( distance < distance_k ){
         distance_k = distance;
@@ -81,15 +86,22 @@ class _GeoListenPageState extends State<GeoListenPage> {
         cidade = (city['cidade']);
       }
     }
-    //print('Menor Distancia: $distance_k');
-    //print('Cidade: $cidade');
-    //print('Numero: $contact');
+    print('Menor Distancia: $distance_k');
+    print('Cidade: $cidade');
+    print('Numero: $contact');
+
+    //Função de fazer ligação.
+    UrlLauncher.launch('tel: $contact');
   }
  
-  void ligacao(){
-
+ /*.
+  void _launchURL() async{
+      android_intent.Intent()
+    ..setAction(android_action.Action.ACTION_DIAL)
+    ..setData(Uri(scheme: "tel", path: "$tel"))
+    ..startActivity().catchError((e) => print(e));
   }
-  
+  */
   @override
   void initState() {
     super.initState();
@@ -129,6 +141,7 @@ class _GeoListenPageState extends State<GeoListenPage> {
                     });
                   });
                   _calcular();
+                  //_launchURL();
                 },
                 color: Colors.red,
                 child: Text(
